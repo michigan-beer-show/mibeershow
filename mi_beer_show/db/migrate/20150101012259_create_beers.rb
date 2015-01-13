@@ -5,7 +5,7 @@ class CreateBeers < ActiveRecord::Migration
     	t.string :brewery
     	t.string :location
     	t.string :style
-    	t.integer :average_score
+    	t.float  :average_score
       t.timestamps
     end
   end

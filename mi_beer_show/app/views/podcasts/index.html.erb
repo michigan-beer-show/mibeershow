@@ -1,0 +1,22 @@
+<% @podcasts.each do |podcast| %>
+	<div class="episode">
+		<h3>
+			<%= podcast.title %>
+		</h3><p><%= podcast.publshed_at %></p>
+		<audio controls>
+			<source src="<% podcast.resource_url %>" type="audio/mpeg">
+		</audio>
+		<p class="podcast-description"><%= podcast.description %></p>
+		<h5>Beers</h5>
+		<% podcast.beers.each do |beer| %>
+		<p class="beer-name"><%= beer.name %></p><p class="average-score"></p>
+		<p class="brewery-name"><%= beer.brewery %></p>
+		<p class="style">Style: <%= beer.style %></p>
+		<p class="location">Location: <%= beer.location %></p>
+			<div class="scores"><% beer.scores.each  do |score|%>
+				<p><%= score.judge %></p>
+				<p><%= score.rating %></p>
+				<% end %>
+			</div>
+	</div>
+<% end %>
