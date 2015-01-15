@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 s3 = AWS::S3.new
-podcasts = s3.buckets[ENV['BUCKET']]
+podcasts = s3.buckets[ENV['AWS_BUCKET']]
 
 podcasts.objects.each do |obj|
 	episode_length = Time.at(obj.metadata[:audio_length].to_i).gmtime.strftime('%R:%S')
-	Podcast.create(name: obj.key, resource_url: 'https://s3.amazonaws.com/media.michiganbeershow.com/#{obj.key}', length: episode_length)
+	Podcast.create(title: obj.key, resource_url: 'https://s3.amazonaws.com/media.michiganbeershow.com/#{obj.key}', length: episode_length)
 end

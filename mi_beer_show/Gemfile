@@ -32,6 +32,8 @@ gem 'paperclip', '~> 4.2'
 # AWS
 gem 'aws-sdk', '~> 1.5.7'
 gem 's3_direct_upload'
+# AWS Credentials
+gem 'figaro'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

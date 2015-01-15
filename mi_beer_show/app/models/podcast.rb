@@ -6,8 +6,6 @@ class Podcast < ActiveRecord::Base
 	has_attached_file :episode,
 					  :storage => :s3,
 					  :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
-	validates_attachment_content_type :episode, :content_type => /\A*.(mp3)\z/
-	validates_attachment_presence :episode
 
 	def truncate
 		subtitle = self.description.slice(0..121)
