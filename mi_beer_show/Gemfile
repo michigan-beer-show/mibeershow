@@ -29,11 +29,15 @@ gem 'spring',        group: :development
 
 #File Upload
 gem 'paperclip', '~> 4.2'
+
 # AWS
-gem 'aws-sdk', '~> 1.5.7'
-gem 's3_direct_upload'
+gem 'aws-sdk', '~> 1.61.0'
+
+gem 's3_direct_upload', '~> 0.1.7'
+
 # AWS Credentials
 gem 'figaro'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

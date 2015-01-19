@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :podcasts, :beers
 
+  get '/signin' => 'sessions#new', as: :signin
+  post '/signin' => 'sessions#create', as: :sessions
+  delete '/signout' => 'sessions#destroy', as: :signout
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

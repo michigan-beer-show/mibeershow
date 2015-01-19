@@ -1,15 +1,15 @@
 class Podcast < ActiveRecord::Base
 	
-	has_many :beers, :through => :podcasts_beers
-	has_many :scores
-	validates :title, :description, :subtitle, :resource_url, :length, presence: true
+	has_and_belongs_to_many :beers
+	# validates :title, :description, :subtitle, :resource_url, :length, presence: true
 	has_attached_file :episode,
 					  :storage => :s3,
 					  :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
 
+	after_update :truncate
+
 	def truncate
-		subtitle = self.description.slice(0..121)
-		return subtitle
+		self.subtitle = self.description.slice(0..121)
 	end
 
 	def s3_credentials

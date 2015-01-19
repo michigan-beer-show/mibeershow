@@ -1,3 +1,3 @@
 class Beer < ActiveRecord::Base
-	has_many :podcasts, through: :podcasts_beers
+	has_and_belongs_to_many :podcasts
 end

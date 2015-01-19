@@ -11,5 +11,7 @@ podcasts = s3.buckets[ENV['AWS_BUCKET']]
 
 podcasts.objects.each do |obj|
 	episode_length = Time.at(obj.metadata[:audio_length].to_i).gmtime.strftime('%R:%S')
-	Podcast.create(title: obj.key, resource_url: 'https://s3.amazonaws.com/media.michiganbeershow.com/#{obj.key}', length: episode_length)
+	Podcast.create!(title: obj.key, resource_url: 'https://s3.amazonaws.com/media.michiganbeershow.com/' + obj.key, length: episode_length)
 end
+
+User.create!(username: "brandonmanson", password: "password")

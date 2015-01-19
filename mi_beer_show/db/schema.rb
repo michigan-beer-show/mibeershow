@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20150105232732) do
     t.datetime "updated_at"
   end
 
+  create_table "beers_podcasts", force: true do |t|
+    t.integer  "podcast_id"
+    t.integer  "beer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "beers_podcasts", ["beer_id"], name: "index_beers_podcasts_on_beer_id", using: :btree
+  add_index "beers_podcasts", ["podcast_id"], name: "index_beers_podcasts_on_podcast_id", using: :btree
+
   create_table "podcasts", force: true do |t|
     t.string   "title"
     t.string   "description"
@@ -37,21 +47,10 @@ ActiveRecord::Schema.define(version: 20150105232732) do
     t.datetime "updated_at"
   end
 
-  create_table "podcasts_beers", force: true do |t|
-    t.integer  "podcast_id"
-    t.integer  "beer_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "podcasts_beers", ["beer_id"], name: "index_podcasts_beers_on_beer_id", using: :btree
-  add_index "podcasts_beers", ["podcast_id"], name: "index_podcasts_beers_on_podcast_id", using: :btree
-
   create_table "scores", force: true do |t|
     t.integer  "rating"
     t.string   "judge"
     t.string   "description"
-    t.integer  "podcast_id"
     t.integer  "beer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -60,6 +59,7 @@ ActiveRecord::Schema.define(version: 20150105232732) do
   create_table "users", force: true do |t|
     t.string   "username"
     t.string   "password_hash"
+    t.string   "remember_token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
