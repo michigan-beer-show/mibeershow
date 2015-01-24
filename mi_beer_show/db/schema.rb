@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105232732) do
+ActiveRecord::Schema.define(version: 20150121020207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,22 @@ ActiveRecord::Schema.define(version: 20150105232732) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "reviews", force: true do |t|
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reviews_beers", force: true do |t|
+    t.integer  "beer_id"
+    t.integer  "review_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews_beers", ["beer_id"], name: "index_reviews_beers_on_beer_id", using: :btree
+  add_index "reviews_beers", ["review_id"], name: "index_reviews_beers_on_review_id", using: :btree
 
   create_table "scores", force: true do |t|
     t.integer  "rating"

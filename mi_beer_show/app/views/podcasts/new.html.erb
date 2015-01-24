@@ -1,2 +1,6 @@
 <%= form_for @podcast do |f| %>
-	<%= f.file_field :
+	<%= f.text_field :title %>
+	<%= f.text_area :description %>
+	<%= f.collection_select(:resource_url, @audio_files) %>
+	<%= f.submit "Save Podcast" %>
+<% end %>

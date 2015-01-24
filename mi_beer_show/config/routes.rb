@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-  resources :podcasts, :beers
+  resources :podcasts, :beers, :reviews
 
   get '/signin' => 'sessions#new', as: :signin
   post '/signin' => 'sessions#create', as: :sessions

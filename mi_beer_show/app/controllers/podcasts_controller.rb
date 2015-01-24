@@ -3,8 +3,26 @@ class PodcastsController < ApplicationController
 		@podcasts = Podcast.all
 	end
 
+	def new
+		@podcast = Podcast.new
+		@beers = Beer.all
+		
+		s3 = AWS::S3.new
+		bucket = s3.buckets[ENV['AWS_BUCKET']]
+		@audio_files = []
+		bucket.objects.each do |obj|
+			@audio_files << obj.key
+		end
+	end
+	
 	def create
-		@podcast = Podcast.create!(params[:podcast])
+		@podcast = Podcast.new(podcast_params)
+
+		if @podcast.save
+			redirect_to podcast_show_path(@podcast.id)
+		else
+			render 'new'
+		end
 	end
 
 	def show

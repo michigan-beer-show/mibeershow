@@ -98,6 +98,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
+    redcarpet (3.2.2)
     s3_direct_upload (0.1.7)
       coffee-rails (>= 3.1)
       jquery-fileupload-rails (~> 0.4.1)
@@ -145,6 +146,7 @@ DEPENDENCIES
   paperclip (~> 4.2)
   pg
   rails (= 4.1.6)
+  redcarpet
   s3_direct_upload (~> 0.1.7)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
