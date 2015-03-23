@@ -27,16 +27,14 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-#File Upload
+# Google APIs
+gem 'google-api-client'
+
+# File Upload
 gem 'paperclip', '~> 4.2'
 
-# AWS
-gem 'aws-sdk', '~> 1.61.0'
-
-gem 's3_direct_upload', '~> 0.1.7'
-
-# AWS Credentials
-gem 'figaro'
+# Fog
+gem 'fog'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
@@ -50,5 +48,5 @@ gem 'redcarpet'
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'byebug', group: [:development, :test]
 

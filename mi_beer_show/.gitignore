@@ -17,5 +17,14 @@
 
 /.DS_Store
 /config/local_env.yml
+
 # Ignore application configuration
 /config/application.yml
+
+# Ignore Google Cloud Storage Credentials
+/config/gcs.yml
+/config/mibeershow.p12
+/config/client_secrets.json
+
+#Ignore secrets
+/config/secrets.yml
