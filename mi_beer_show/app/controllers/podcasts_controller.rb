@@ -6,6 +6,12 @@ class PodcastsController < ApplicationController
 	def new
 		@podcast = Podcast.new
 		@beers = Beer.all
+		@audio_files = []
+		result = CloudStorage.get_all_files
+		result.data.items.each do |item|
+			@audio_files << [item.name, item.mediaLink]
+		end
+
 		
 	end
 	
@@ -57,6 +63,6 @@ class PodcastsController < ApplicationController
 	private
 
 	def podcast_params
-		params.require(:podcast).permit(:title, :description)
+		params.require(:podcast).permit(:title, :description, :resource_url)
 	end
 end
