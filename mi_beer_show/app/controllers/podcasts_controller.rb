@@ -55,7 +55,7 @@ class PodcastsController < ApplicationController
 	def feed
 		@podcasts = Podcast.all
 		respond_to do |format|
-			format.html
+			format.html { render :index }
 			format.rss
 		end
 	end

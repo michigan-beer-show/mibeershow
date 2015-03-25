@@ -30,6 +30,9 @@ gem 'spring',        group: :development
 # Google APIs
 gem 'google-api-client'
 
+#RSS Builder
+gem 'builder'
+
 # File Upload
 gem 'paperclip', '~> 4.2'
 

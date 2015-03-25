@@ -247,6 +247,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  builder
   byebug
   coffee-rails (~> 4.0.0)
   fog
