@@ -1,7 +1,6 @@
 class Podcast < ActiveRecord::Base
-	
 	has_and_belongs_to_many :beers
-	validates :title, :resource_url, presence: true, uniqueness: true
+	validates :title, presence: true, uniqueness: true
 
 	after_update :truncate
 

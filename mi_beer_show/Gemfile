@@ -34,7 +34,7 @@ gem 'google-api-client'
 gem 'builder'
 
 # File Upload
-gem 'paperclip', '~> 4.2'
+gem 'carrierwave'
 
 # Fog
 gem 'fog'
@@ -44,6 +44,12 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Markdown
 gem 'redcarpet'
+
+# Nested Form Fields
+gem 'nested_form_fields'
+
+# Foundation
+gem 'foundation-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 

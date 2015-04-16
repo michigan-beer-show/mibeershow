@@ -13,7 +13,9 @@ p result.data
 result.data.items.each do |item|
 	p item.name
 	p item.mediaLink
-	Podcast.create!(title: item.name, resource_url: item.mediaLink)
+	if item.contentType == "audio/mp3"
+		Podcast.create!(title: item.name, resource_url: item.mediaLink)
+	end
 end
 
 User.create!(username: "brandonmanson", password: "password")

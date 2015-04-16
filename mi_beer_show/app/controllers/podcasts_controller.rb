@@ -5,20 +5,13 @@ class PodcastsController < ApplicationController
 
 	def new
 		@podcast = Podcast.new
-		@beers = Beer.all
-		@audio_files = []
-		result = CloudStorage.get_all_files
-		result.data.items.each do |item|
-			@audio_files << [item.name, item.mediaLink]
-		end
-
-		
+		beers = @podcast.beers.build
+		scores = beers.scores.build
 	end
-	
+
 	def create
 		@podcast = Podcast.new(podcast_params)
-
-		if @podcast.save
+		if @podcast.save!
 			redirect_to podcast_show_path(@podcast.id)
 		else
 			render 'new'
@@ -63,6 +56,6 @@ class PodcastsController < ApplicationController
 	private
 
 	def podcast_params
-		params.require(:podcast).permit(:title, :description, :resource_url)
+		params.require(:podcast).permit(:title, :description, :beers_attributes => [:name, :brewery, :scores_attributes => [:judge, :rating]])
 	end
 end

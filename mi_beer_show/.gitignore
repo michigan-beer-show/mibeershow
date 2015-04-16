@@ -22,7 +22,6 @@
 /config/application.yml
 
 # Ignore Google Cloud Storage Credentials
-/config/gcs.yml
 /config/mibeershow.p12
 /config/client_secrets.json
 
