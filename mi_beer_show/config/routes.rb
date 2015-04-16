@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create', as: :sessions
   delete '/signout' => 'sessions#destroy', as: :signout
 
-  get '/feed/podcast2' => 'podcasts#feed'
+  get '/category/podcasts/feed/' => 'podcasts#feed'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
