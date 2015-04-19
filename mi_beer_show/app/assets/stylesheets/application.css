@@ -16,3 +16,10 @@
 
  *= require_tree .
  */
+
+.top-logo {
+	height: 60px;
+	width: 60px;
+	display: block;
+	vertical-align: center;
+}
