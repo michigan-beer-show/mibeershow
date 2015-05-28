@@ -55,6 +55,8 @@ gem 'foundation-rails'
 
 # Soundcloud
 gem 'soundcloud'
+gem 'omniauth-soundcloud'
+gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

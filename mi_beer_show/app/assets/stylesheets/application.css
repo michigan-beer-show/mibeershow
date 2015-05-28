@@ -26,9 +26,16 @@
  	position: absolute;
  	color: white;
  	text-align: center;
- 	top: 50%;
+ 	top: 30%;
  	right: 0;
  	left: 0;
+ }
+
+ .row .labelrow img {
+ 	display: block;
+ 	max-height: 180px;
+ 	margin: auto;
+ 	margin-bottom: 1%;
  }
 
  .row .labelrow p {
@@ -43,10 +50,16 @@
  	position: absolute;
  	color: white;
  	text-align: center;
- 	top: 10%;
+ 	top: 5%;
  	right: 0;
  	left: 0;
 
+ }
+
+ .row .labelrow-small img {
+ 	display: block;
+ 	margin: auto;
+ 	max-height: 90px;
  }
 
  .row .labelrow:before, .labelrow-small:before {
