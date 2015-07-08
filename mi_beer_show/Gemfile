@@ -16,6 +16,9 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+# Font Awesome
+gem 'font-awesome-sass'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -48,6 +51,12 @@ gem 'redcarpet'
 # Nested Form Fields
 gem 'nested_form_fields'
 
+# Mail Form
+gem 'mail_form'
+
+# Mailchimp
+gem 'mailchimp-api', require: 'mailchimp'
+
 # Foundation
 gem 'foundation-rails'
 # Use unicorn as the app server
@@ -55,8 +64,7 @@ gem 'foundation-rails'
 
 # Soundcloud
 gem 'soundcloud'
-gem 'omniauth-soundcloud'
-gem 'devise'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

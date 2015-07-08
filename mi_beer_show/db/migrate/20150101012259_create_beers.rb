@@ -3,9 +3,8 @@ class CreateBeers < ActiveRecord::Migration
     create_table :beers do |t|
     	t.string :name
     	t.string :brewery
-    	t.string :location
-    	t.string :style
     	t.float  :average_score
+      t.belongs_to :style
       t.timestamps
     end
   end

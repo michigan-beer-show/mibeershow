@@ -5,17 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-include CloudStorage
+tracks = PodcastsHelper.get_all_tracks
 
-result = CloudStorage.get_all_files
-p result.data
-
-result.data.items.each do |item|
-	p item.name
-	p item.mediaLink
-	if item.contentType == "audio/mp3"
-		Podcast.create!(title: item.name, resource_url: item.mediaLink)
-	end
+tracks.each do |track|
+	Podcast.create!(title: track[:title], uri: track[:uri], permalink_url: track[:permalink_url], description: track[:description])
 end
-
-User.create!(username: "brandonmanson", password: "password")

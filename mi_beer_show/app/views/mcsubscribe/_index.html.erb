@@ -1,0 +1,7 @@
+<h3>Subscribe for the monthly Michigan Beer Show Newsletter</h3>
+<p>Please enter your email address to subscribe</p>
+<%= form_tag('/mcsubscribe/subscribe', method: "post", id: "mcsubscribe", remote: "true") do -%>
+	<%= email_field(:email, :address, {id: "email", placeholder: "email address"}) %>
+   <%= submit_tag("Subscribe") %>
+<% end %>
+<div id="response">Response goes here</div>

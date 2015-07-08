@@ -1,32 +1,146 @@
+<!-- Markup for medium and large screens goes here -->
 <div class="row">
-	<div class="large-12 columns">
-		<div class="hide-for-small">
-			<div id="featured">
-				<img src="<%= asset_path('brandon-and-tony.jpg') %>">
-				<div class="row labelrow">
-					<img src="<%= asset_path('front-page-logo.png') %>">
-					<p>We are Michigan's only podcast dedicated to its <strong>finest natural resource.</strong></p>
-				</div>
+	<div class="hide-for-small">
+		<div class="row labelrow">
+			<img src="<%= asset_path('front-page-logo.png') %>">
+			<div class="large-12 columns">
+				<p>We are Michigan's only podcast dedicated to its <strong>finest natural resource.</strong></p>
+			</div>
+		</div>
+	<img id="main-image" src="<%= asset_path('brandon-and-tony.jpg') %>">
+	</div>
+	</div>
+</div>
+<div class="row">
+	<div class="hide-for-small">
+		<div class="large-12 columns contain-to-grid sticky">
+			<nav class="top-bar" data-topbar role="navigation">
+				<ul class="title-area">
+					<li class="name">
+						<a href="<%= root_path %>"><img id="top-bar-logo-big" src="<%= asset_path('top-bar-logo.png') %>"></a>
+					</li>
+				</ul>
+				<section class="top-bar-section">
+					<ul class="right">
+						<li><a href="<%= root_path %>">Home</a></li>
+						<li class="divider"></li>
+						<li><a href="<%= podcasts_path %>">Listen</a></li>
+						<li class="divider"></li>
+						<li><a href="http://blog.michiganbeershow.com">Blog</a></li>
+						<li class="divider"></li>
+						<li class="has-dropdown">
+							<a href="#">Subscribe</a>
+							<ul class="dropdown">
+								<li><a href="https://itunes.apple.com/us/podcast/the-michigan-beer-show/id985070913?mt=2">iTunes</a></li>
+								<li><a href="http://soundcloud.com/mibeershow">SoundCloud</a></li>
+								<li><a href="http://www.stitcher.com/podcast/the-michigan-beer-show">Stitcher</a></li>
+							</ul>
+						</li>
+						<li class="divider"></li>
+						<li><a href="https://ugpogo.undergroundshirts.com/groupIndex.php?cart_id=5192">Apparel</a></li>
+						<li class="divider"></li>
+						<li><a href="mailto:hello@michiganbeershow.com">Contact</a></li>
+					</ul>
+					<ul class="left">
+						<li><a href="#"><%= icon('facebook-square', class: 'strong') %></i></a></li>
+						<li><a href="#"><%= icon('twitter', class: 'strong') %></a></li>
+						<li><a href="#"><%= icon('instagram', class: 'strong') %></a></li>
+					</ul>
+				</section>
+			</nav>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="hide-for-small">
+		<div class="large-12 columns" id="subscribe-row">
+				<h3>SUBSCRIBE</h3>
 			</div>
 		</div>
 	</div>
 </div>
 <div class="row">
-	<div class="large-12 columns">
-		<div class="hide-for-small">
+	<div class="hide-for-small">
+		<div class="large-12 columns" id="subscriptions-big">
 			<ul class="small-block-grid-3">
-				<li><a href="https://itunes.apple.com/us/podcast/michigan-beer-show-podcasts/id985070913"><img src="http://placehold.it/410x250&text=iTunes"></a></li>
-				<li><a href="http://www.stitcher.com/podcast/the-michigan-beer-show"><img src="http://placehold.it/410x250&text=Stitcher"></a></li>
-				<li><a href="https://soundcloud.com/mibeershow"><img src="http://placehold.it/410x250&text=Soundcloud"></a></li>
+				<li><a href="https://itunes.apple.com/us/podcast/michigan-beer-show-podcasts/id985070913"><img class="subscribe-image" src="<%= asset_path('itunes-website-front-page-image.png') %>"></a></li>
+				<li><a href="http://www.stitcher.com/podcast/the-michigan-beer-show"><img class="subscribe-image" src="<%= asset_path('stitcher-website-front-page-image.png') %>"></a></li>
+				<li><a href="https://soundcloud.com/mibeershow"><img class="subscribe-image" src="<%= asset_path('soundcloud-website-front-page-image.png') %>"></a></li>
 			</ul>
 		</div>
 	</div>
 </div>
 <div class="row">
-	<div class="small-12">
-		<div class="show-for-small">
-			<img src="<%= asset_path('brandon-and-tony.jpg') %>">
-			<div class="row labelrow-small">
+	<div class="hide-for-small">
+		<div class="large-12 columns" id="support-row">
+				<h3>SUPPORT THE SHOW</h3>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="hide-for-small">
+		<div class="large-12 columns" id="support-big">
+			<div class="large-6 columns">
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="support">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="MY7C3VCVW8Z3G">
+					<input type="image" src="https://drive.google.com/uc?id=0B5GfplQmSf-kQ3ZGMjVoUzc4a0k" border="0" name="submit" alt="Support The Michigan Beer Show">
+					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+				</form>
+			</div>
+			<div class="large-6 columns">
+				<a href="https://ugpogo.undergroundshirts.com/groupIndex.php?cart_id=5192">
+					<img src="<%= asset_path('ugp-graphic.png') %>">
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="hide-for-small">
+		<div class="large-12 columns" id="listen-row">
+			<h3>LISTEN TO OUR LATEST</h3>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="hide-for-small">
+		<div class="medium-12 medium-centered large-centered columns" id="listen-big">
+			<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=<%= @podcast.uri %>&amp;color=32beeb&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="hide-for-small">
+		<div class="large-12 columns" id="contact-row">
+			<h3>STAY IN TOUCH</h3>
+		</div>
+	</div>
+</div>
+<div class="row" id="contact">
+	<div class="hide-for-small">
+		<div class="large-6 medium-10 medium-centered large-centered columns" id="contact-1">
+			<h3>Contact Us</h3>
+			<p>Want us to try a beer? Care to have us out to do a show at your brewery? Or perhaps you have some nice, constructive feedback on how we could get better. Drop us a line! We are always listening.</p>
+			<a href="mailto:hello@michiganbeershow.com" id="contact-button" class="button expand radius secondary">Send Us Email</a>
+		</div>
+	</div>
+	<div class="hide-for-small">
+		<div class="large-6 medium-10 medium-centered large-centered columns" id="contact-2">
+			<h3>Sign Up For Our Newsletter</h3>
+			<p>Once a month, we'll send out a newsletter recapping some of our favorite beers, a feature on something cool happening somewhere in Michigan and regail you with tales from our latest exploits at one of the state's fine breweries. Don't miss out!</p>
+			<a href="http://eepurl.com/bpgjoz" target="_blank" id="signup-button" class="button expand radius secondary">Get Our Emails</a>
+		</div>
+	</div>
+</div>
+
+<!-- Markup for small screens goes here -->
+<div class="row">
+	<div class="hide-for-medium-up">
+		<img src="<%= asset_path('brandon-and-tony.jpg') %>">
+		<div class="row labelrow-small">
+			<div class="small-12 columns">
 				<img src="<%= asset_path('front-page-logo.png') %>">
 				<p>We are Michigan's only podcast dedicated to its <br><strong>finest natural resource.</strong></p>
 			</div>
@@ -34,23 +148,160 @@
 	</div>
 </div>
 <div class="row">
-	<div class="small-12">
-		<div class="show-for-small">
-			<div class="small-6 columns">
-				<a href="https://itunes.apple.com/us/podcast/michigan-beer-show-podcasts/id985070913"><img src="http://placehold.it/400x250&text=iTunes"></a>
-			</div>
-			<div class="small-6 columns">
-				<a href="http://www.stitcher.com/podcast/the-michigan-beer-show"><img src="http://placehold.it/400x250&text=Stitcher"></a>
+	<div class="hide-for-medium-up">
+		<div class="off-canvas-wrap" data-offcanvas>
+			<div class="inner-wrap">
+				<nav class="tab-bar">
+					<section class="right-small">
+						<a class="right-off-canvas-toggle menu-icon" href="#" aria-expanded="false">
+							<span></span>
+						</a>
+					</section>
+					<section class="middle tab-bar-section">
+						<img src="<%= asset_path('top-bar-logo.png') %>" id="top-bar-logo-small">
+					</section>
+				</nav>
+				<aside class="right-off-canvas-menu">
+					<ul class="off-canvas-list">
+						<li>
+							<label>Home</label>
+						</li>
+						<li>
+							<a href="<%= root_path %>">Home</a>
+						</li>
+						<li>
+							<label>Listen</label>
+						</li>
+						<li>
+							<%= link_to "Podcasts", podcasts_path %>
+						</li>
+						<li>
+							<a href="http://blog.michiganbeershow.com">Blog</a>
+						</li>
+						<li>
+							<label>Support the Show</label>
+						</li>
+						<li>
+							<a href="https://ugpogo.undergroundshirts.com/groupIndex.php?cart_id=5192">Apparel</a>
+						</li>
+						<li>
+							<label>Subscribe</label>
+						</li>
+						<li>
+							<a href="https://itunes.apple.com/us/podcast/the-michigan-beer-show/id985070913?mt=2">iTunes</a>
+						</li>
+						<li>
+							<a href="http://soundcloud.com/mibeershow">SoundCloud</a>
+						</li>
+						<li>
+							<a href="http://www.stitcher.com/podcast/the-michigan-beer-show">Stitcher</a>
+						</li>
+						<li>
+							<label>Contact</label>
+						</li>
+						<li>
+							<a href="mailto:hello@michiganbeershow.com">Email</a>
+						</li>
+					</ul>
+				</aside>
+				<section class="main-section">
+					<div class="row">
+						<div class="hide-for-medium-up">
+							<div class="small-12 columns" id="subscribe-row">
+								<h3>SUBSCRIBE</h3>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="hide-for-medium-up">
+							<div class="small-12 columns" id="subscriptions-small">
+								<div class="small-4 columns">
+									<a href="https://itunes.apple.com/us/podcast/michigan-beer-show-podcasts/id985070913"><img src="<%= asset_path('itunes-website-front-page-image.png') %>"></a>
+								</div>
+								<div class="small-4 columns">
+									<a href="http://www.stitcher.com/podcast/the-michigan-beer-show"><img src="<%= asset_path('stitcher-website-front-page-image.png') %>"></a>
+								</div>
+								<div class="small-4 columns">
+									<a href="http://www.stitcher.com/podcast/the-michigan-beer-show"><img src="<%= asset_path('soundcloud-website-front-page-image.png') %>"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="hide-for-medium-up">
+							<div class="small-12 columns" id="support-row-small">
+								<h3>SUPPORT THE SHOW</h3>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="hide-for-medium-up">
+							<div class="small-12 columns" id="support-small">
+								<div class="small-12 columns">
+									<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="support">
+										<input type="hidden" name="cmd" value="_s-xclick">
+										<input type="hidden" name="hosted_button_id" value="MY7C3VCVW8Z3G">
+										<input type="image" src="https://drive.google.com/uc?id=0B5GfplQmSf-kNFpFWklza05kbmc" border="0" name="submit" alt="Support The Michigan Beer Show">
+										<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+									</form>
+								</div>
+								<div class="small-12 columns">
+									<a href="https://ugpogo.undergroundshirts.com/groupIndex.php?cart_id=5192">
+										<img src="<%= asset_path('ugp-graphic.png') %>">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="hide-for-medium-up">
+							<div class="small-12 columns" id="listen-row-small">
+								<h3>LISTEN TO OUR LATEST</h3>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="hide-for-medium-up">
+							<div class="small-12 columns" id="listen-small">
+								<div class="small-12 columns">
+									<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=<%= @podcast.uri %>&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="hide-for-medium-up">
+							<div class="small-12 columns" id="contact-row">
+								<h3>STAY IN TOUCH</h3>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="hide-for-medium-up">
+							<div class="small-12 columns" id="contact-1">
+								<div class="small-10 small-centered columns">
+									<h3>Contact Us</h3>
+									<p>Want us to try a beer? Care to have us out to do a show at your brewery? Or perhaps you have some nice, constructive feedback on how we could get better. Drop us a line! We are always listening.</p>
+									<a href="mailto:hello@michiganbeershow.com" id="contact-button" class="button expand radius secondary">Send Us Email</a>
+								</div>
+							</div>
+						</div>
+						<div class="hide-for-medium-up">
+							<div class="small-12 columns" id="contact-2">
+								<div class="small-10 small-centered columns">
+									<div class="hide-for-medium-up">
+										<h3>Sign Up For Our Newsletter</h3>
+										<p>Once a month, we'll send out a newsletter recapping some of our favorite beers, a feature on something cool happening somewhere in Michigan and regale you with tales from our latest exploits at one of the state's fine breweries. Don't miss out!</p>
+										<a href="http://eepurl.com/bpgjoz" target="_blank" id="signup-button" class="button expand radius secondary">Get Our Emails</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<a href="exit-off-canvas"></a>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="row">
-	<div class="small-12">
-		<div class="show-for-small">
-			<div class="small-12 columns">
-				<a href="https://soundcloud.com/mibeershow"><img src="http://placehold.it/800x400&text=Soundcloud"></a>
-			</div>
-		</div>
-	</div>
 </div>

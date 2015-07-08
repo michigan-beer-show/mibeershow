@@ -25,5 +25,5 @@
 # /config/mibeershow.p12
 # /config/client_secrets.json
 
-#Ignore secrets
+# Ignore secrets.yml
 /config/secrets.yml
