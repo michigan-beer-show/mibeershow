@@ -15,6 +15,7 @@ class BeersController < ApplicationController
 				format.json
 				format.js
 			end
+		end
 	end
 
 	def create
