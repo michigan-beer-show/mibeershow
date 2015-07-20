@@ -170,14 +170,27 @@
  	margin: auto;
  }
 
- .episode {
- 	padding-top: 2%;
- 	padding-bottom: 5%;
- 	box-shadow: 0 10px 30px -15px #333333;
- 	border-radius: 5px;
- 	margin: 0 auto;
- 	max-width: 90%;
- }
+ .demo-card-wide.mdl-card {
+    width: 90%;
+    margin: 3% auto; 
+  }
+  .demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url('https://i1.sndcdn.com/visuals-000039602775-0jJUwU-t1240x260.jpg') center / cover;
+  }
+  .demo-card-wide > .mdl-card__menu {
+    color: #fff;
+  }
+  .mdl-card__media {
+  	box-sizing: border-box;
+  	padding: 1%;
+  	background-color: #999999;
+  }
+
+  .hide-for-medium-up > .demo-card-wide.mdl-card {
+  	width: 90%;
+  }
 
  footer {
  	height: 2.0em;
