@@ -1,0 +1,21 @@
+<%= form_for(beer) do |f| %>
+	<div class="row">
+		<div class="large-12 columns">
+			<label>Beer Name</label>
+			<input type="text" placeholder="Name of Beer" name="name">
+			<label>Brewery</label>
+			<input type="text" placeholder="Brewery" name="brewery">
+			<label>Style</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<select>
+				<%= @styles.each do |style| %>
+					<option value="<%= style.id %>"><%= style.name %></option>
+				<% end %>
+			</select>
+		</div>
+	</div>
+	<%= f.submit 'Create Beer', :class => 'button' %>
+<% end %>

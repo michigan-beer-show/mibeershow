@@ -1,0 +1,203 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require normalize
+ *= require_self
+ *= require foundation_and_overrides
+
+ *= require_tree .
+ */
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+ .row {
+ 	display: block;
+ }
+
+ i {
+ 	font-size: 5.0em;
+ 	padding-left: 5%;
+ }
+
+ #first-row {
+ 	background-image: url(/images/brandon-and-tony.jpg);
+ }
+
+ #main-image {
+ 	max-width: 100%;
+ }
+
+ #subscriptions-big, #subscriptions-small, #contact-1, #contact-2 {
+ 	background-color: #32beeb;
+ 	padding-bottom: 10%;
+ }
+
+ #listen-row, #about-row, #listen-big, #listen-small, #listen-row-small {
+ 	background-color: #e7e7e7;
+ }
+
+ #listen-row h3, #listen-row-small h3, #about-row h3 {
+ 	color: #32beeb;
+ 	text-align: center;
+ 	font-weight: lighter;
+ 	font-size: 2.5em;
+ }
+
+ #listen-row, #about-row, #support-row, #support-row-small {
+ 	padding-top: 10%;
+ 	padding-bottom: 10%;
+ }
+
+ #support-row, #support-big, #support-row-small, #support-small {
+ 	background-color: #333333;
+ }
+
+ #support-small img {
+ 	display: block;
+ 	margin: auto;
+ 	max-width: 250px;
+ }
+
+ #support-small form {
+ 	max-width: 250px;
+ 	margin: 0 auto;
+ }
+
+ #support-row h3, #support-row-small h3 {
+ 	text-align: center;
+ 	color: #e7e7e7;
+ 	font-weight: lighter;
+ 	font-size: 2.5em;
+ }
+
+#listen-big, #listen-small, #support-big, #support-small form, #support-small img {
+	padding-bottom: 10%;
+}
+
+ #subscribe-row, #contact-row {
+ 	background-color: #32beeb;
+ 	padding-top: 10%;
+ 	padding-bottom: 10%;
+ }
+
+ #subscribe-row h3, #contact-row h3 {
+ 	color: white;
+ 	text-align: center;
+ 	font-weight: lighter;
+ 	font-size: 2.5em;
+ }
+
+ #top-bar-logo-big {
+ 	max-height: 60px;
+ }
+
+ #top-bar-logo-small {
+ 	max-height: 40px;
+ }
+
+ #contact {
+ 	background-color: #32beeb;
+ }
+
+ #contact-1 h3, #contact-2 h3 {
+ 	color: #555555;
+ 	text-align: center;
+ 	font-weight: bolder;
+ }
+
+ #contact-1 p, #contact-2 p, #about-row p {
+ 	color: #555555;
+ }
+
+ .row .labelrow {
+ 	position: absolute;
+ 	color: white;
+ 	text-align: center;
+ 	top: 15%;
+ 	right: 0;
+ 	left: 0;
+ }
+
+ .row .labelrow img {
+ 	display: block;
+ 	max-height: 180px;
+ 	margin: auto;
+ 	margin-bottom: 1%;
+ }
+
+ .row .labelrow p {
+ 	font-size: 1.5rem;
+ }
+
+ .row .labelrow p, .row .labelrow-small p {
+ 	font-weight: lighter;
+ }
+
+ .row .labelrow-small {
+ 	position: absolute;
+ 	color: white;
+ 	text-align: center;
+ 	top: 3%;
+ 	right: 0;
+ 	left: 0;
+
+ }
+
+ .row .labelrow-small img {
+ 	display: block;
+ 	margin: auto;
+ 	max-height: 90px;
+ }
+
+ .row .labelrow:before, .labelrow-small:before {
+ 	content: '';
+ 	vertical-align: middle;
+ 	height: 1%;
+ }
+
+ .subscribe-image {
+ 	max-width: 205px;
+ 	display: block;
+ 	margin: auto;
+ }
+
+ .demo-card-wide.mdl-card {
+    width: 90%;
+    margin: 3% auto; 
+  }
+  .demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url('https://i1.sndcdn.com/visuals-000039602775-0jJUwU-t1240x260.jpg') center / cover;
+  }
+  .demo-card-wide > .mdl-card__menu {
+    color: #fff;
+  }
+  .mdl-card__media {
+  	box-sizing: border-box;
+  	padding: 1%;
+  	background-color: #999999;
+  }
+
+  .hide-for-medium-up > .demo-card-wide.mdl-card {
+  	width: 90%;
+  }
+
+ footer {
+ 	height: 2.0em;
+ 	background-color: #555555;
+ 	color: #32beeb;
+ 	text-align: center;
+ 	font-weight: lighter;
+ 	font-size: 1.5em;
+ 	padding: 3%; 
+ }

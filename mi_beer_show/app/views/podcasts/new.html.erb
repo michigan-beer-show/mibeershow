@@ -1,0 +1,17 @@
+<%= form_for @podcast do |f| %>
+	<%= f.text_field :title %><br>
+	<%= f.text_area :description %><br>
+	<%= f.nested_fields_for :beers do |ff| %>
+		<%= ff.remove_nested_fields_link 'Remove Beer', class: 'remove-beer-button', role: 'button' %><br>
+		<%= ff.text_field :name %><br>
+		<%= ff.text_field :brewery %><br>
+		<%= ff.nested_fields_for :scores do |fff| %>
+			<%= fff.remove_nested_fields_link 'Remove Score', class: 'remove-score-button'%>
+			<%= fff.text_field :judge %>
+			<%= fff.number_field "rating", in: 2...14 %>
+		<% end %>
+		<%= ff.add_nested_fields_link :scores, 'Add a score', class: 'add-score-button'%>
+	<% end %>
+	<%= f.add_nested_fields_link :beers, 'Add A Beer', class: "add-beer-button" %>
+	<%= f.submit "Save Podcast" %>
+<% end %>

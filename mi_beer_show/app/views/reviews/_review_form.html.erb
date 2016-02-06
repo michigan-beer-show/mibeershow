@@ -1,0 +1,13 @@
+<%= form_for(review) do |f| %>
+	<div class="row">
+		<div class="large-12 columns">
+			<label>Reviewer</label>
+			<select>
+				<%= @users.each do |user| %>
+					<option value="<%= user.id %>"><%= user.first_name %></option>
+				<% end %>
+			</select>
+		</div>
+	</div>
+	<%= f.submit 'Create Review', :class => 'button' %>
+<% end %>
