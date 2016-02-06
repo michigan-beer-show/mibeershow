@@ -1,9 +1,0 @@
-<%= @podcast.title %><br>
-<audio controls>
-	<source src="<%= @podcast.resource_url %>" preload="auto" type="audio/mpeg">
-</audio><br>
-<%= @podcast.description %><br>
-<% if current_user %>
-	<%= link_to "Edit", edit_podcast_path(@podcast) %><br>
-<% end %>
-<%= link_to "Back to podcasts", podcasts_url %>
