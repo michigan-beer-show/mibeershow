@@ -1,0 +1,151 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ p {
+  font-family: 'Merriweather', serif;
+  color: #4a4a4a;
+  text-align: center;
+  background-color: #fff;
+  font-size: 1em;
+}
+
+.label {
+  font-family: 'Merriweather', serif;
+  color: #4a4a4a;
+  text-align: center;
+  background-color: #fff;
+  font-size: 1em;
+}
+
+a:link {
+  color: #32beeb;
+  opacity: 1;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #32beeb;
+  opacity: 1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #5bcbef;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+a:active {
+  color: #32beeb;
+  opacity: 1;
+  text-decoration: none;
+}
+
+.h1 {
+  font-family: "Open Sans",sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.h2 {
+  font-family: "Open Sans",sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.links {
+  width: 80%;
+  margin-bottom: 40px;
+}
+
+svg {
+  display: block;
+  margin: auto;
+  margin-bottom: 2%;
+}
+
+.hero {
+  font-family: "Merriweather",serif;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+
+.podcast {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.7em;
+  padding-bottom: 8px;
+}
+
+.sitewrapper {
+  width: 70%;
+  max-width: 900px;
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.button {
+  background: #32beeb;
+  border-radius: 2px;
+  color: #FFF;
+  font-size: 1em;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+}
+
+.email {
+  background: #F7F8F9;
+  border: 1px solid #C3D0D3;
+  border-radius: 2px;
+  height: 36px;
+  font-size: 1em;
+  height: 39px;
+  width: 65%;
+}
+
+input::-webkit-input-placeholder {
+  padding-left: 8px;
+}
+
+input::-moz-placeholder {
+  padding-left: 8px;
+}
+
+input::-ms-input-placeholder {
+  padding-left: 8px;
+}
+
+.email-form {
+  margin-bottom: 5%;
+}
+
+.soundcloud-embedded-player {
+  margin-bottom: 5%;
+  display: block;
+}
