@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	</head>
+	<body>
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '713405955428183',
+		      xfbml      : true,
+		      status     : true,
+		      version    : 'v2.5'
+		    });
+		  };
+
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
+		<h1>Get beer events for a range of dates</h1>
+		<label>Start Date</label><input type="date" id="start_date">
+		<label>End Date</label><input type="date" id="end_date">
+		<button class="btn-lg">Find Events</button>
+		<div class="events">
+		</div>
+		<script>
+			var start_date = $('#start_date').val();
+			var end_date = $('#end_date').val();
+			$('button').click(function() {
+				FB.api(
+					'/events?ids=256563537814580,206257849387824,48931073100&since='+ start_date + 'T00:00:00-0500&until=' + end_date +'T00:00:00-0500', function(response) {
+						console.log(response);
+						len = response.length;
+						for(var i = 0; i < len; i++ ) {
+							var event = response[i];
+							$(".events").append(
+								$("<p>" + response.name + "</p>")
+								)
+						}
+					})
+			})
+		</script>
+	</body>
+</html>
