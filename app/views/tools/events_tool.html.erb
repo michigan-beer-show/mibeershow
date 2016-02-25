@@ -59,9 +59,10 @@
 				  function(response) {
 				    for (var k in response) {
 				    	if (response.hasOwnProperty(k)) {
+				    		console.log(k);
 				    		for (var i in k ) {
 				    			if(k.hasOwnProperty(i)) {
-				    				console.log(i['data']);
+				    				console.log(i);
 				    			}
 				    		}
 				    	}
