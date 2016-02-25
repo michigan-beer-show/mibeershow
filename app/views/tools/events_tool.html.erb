@@ -23,6 +23,24 @@
 		     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=713405955428183";
 		     fjs.parentNode.insertBefore(js, fjs);
 		   }(document, 'script', 'facebook-jssdk'));
+
+		  FB.getLoginStatus(function(response) {
+		  	  console.log('getLoginStatus called. Status is ' + response.status);
+			  if (response.status === 'connected') {
+			    // the user is logged in and has authenticated your
+			    // app, and response.authResponse supplies
+			    // the user's ID, a valid access token, a signed
+			    // request, and the time the access token 
+			    // and signed request each expire
+			    var uid = response.authResponse.userID;
+			    var accessToken = response.authResponse.accessToken;
+			  } else if (response.status === 'not_authorized') {
+			    // the user is logged in to Facebook, 
+			    // but has not authenticated your app
+			  } else {
+			    // the user isn't logged in to Facebook.
+			  }
+			 });
 		</script>
 		<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 		<h1>Get beer events for a range of dates</h1>
