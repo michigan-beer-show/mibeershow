@@ -57,17 +57,18 @@
 				  'GET',
 				  {"ids":"105556992828025,192775419960,7579541007,37666630858,85225854762,113401765351875,162005542775,108780209962,198090120279785,189988187874231,648104601902330,117460490046,503893199747856,23091193699,72603589907,189257844446264,309421567335,251475819670,175902751236,161299953908156,48931073100,168663362478,263969590374774,573634349387343,195131513849214,219589161509633,224306027626405,465041390203339,1501471970116372","since":start_date,"until":end_date},
 				  function(response) {
-				  	var res = response;
-				    console.log(res);
-					len = res.length;
+				    console.log(response);
+					len = response.length;
 					for(var i = 0; i < len; i++ ) {
-					var event = res[i];
-					$(".events").append(
-						$("<p>" + event.name + "</p>")
-					)
+					var place = response[i];
+						for(var x = 0; x < place.data.length; x++) {
+							var event = place.data[x];
+							$(".events").append(
+								$("<p>" + event.name + "</p>")
+							)
+						}
 					}
-				  }
-				);
+				});
 			})
 		</script>
 	</body>
