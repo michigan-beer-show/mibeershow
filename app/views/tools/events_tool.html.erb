@@ -24,7 +24,9 @@
 			    // and signed request each expire
 			    var uid = response.authResponse.userID;
 			    var accessToken = response.authResponse.accessToken;
-			    $(.fb-login-button).replaceWith("<p>Logged in</p>) {
+			    $(".fb-login-button").replaceWith("<div class="alert alert-warning alert-dismissible" role="alert">
+  						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  						<strong>Logged In</strong></div>")
 			    // the user is logged in to Facebook, 
 			    // but has not authenticated your app
 			  } else {
