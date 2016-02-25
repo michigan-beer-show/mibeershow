@@ -14,17 +14,7 @@
 		      status     : true,
 		      version    : 'v2.5'
 		    });
-		  };
-
-		  (function(d, s, id){
-		     var js, fjs = d.getElementsByTagName(s)[0];
-		     if (d.getElementById(id)) {return;}
-		     js = d.createElement(s); js.id = id;
-		     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=713405955428183";
-		     fjs.parentNode.insertBefore(js, fjs);
-		   }(document, 'script', 'facebook-jssdk'));
-
-		  FB.getLoginStatus(function(response) {
+		    FB.getLoginStatus(function(response) {
 		  	  console.log('getLoginStatus called. Status is ' + response.status);
 			  if (response.status === 'connected') {
 			    // the user is logged in and has authenticated your
@@ -41,6 +31,15 @@
 			    // the user isn't logged in to Facebook.
 			  }
 			 });
+		  };
+
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=713405955428183";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
 		</script>
 		<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 		<h1>Get beer events for a range of dates</h1>
