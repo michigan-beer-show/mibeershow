@@ -5,6 +5,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	</head>
 	<body>
+		<div id="fb-root"></div>
 		<script>
 		  window.fbAsyncInit = function() {
 		    FB.init({
@@ -19,10 +20,11 @@
 		     var js, fjs = d.getElementsByTagName(s)[0];
 		     if (d.getElementById(id)) {return;}
 		     js = d.createElement(s); js.id = id;
-		     js.src = "//connect.facebook.net/en_US/sdk.js";
+		     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=713405955428183";
 		     fjs.parentNode.insertBefore(js, fjs);
 		   }(document, 'script', 'facebook-jssdk'));
 		</script>
+		<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 		<h1>Get beer events for a range of dates</h1>
 		<label>Start Date</label><input type="date" id="start_date">
 		<label>End Date</label><input type="date" id="end_date">
