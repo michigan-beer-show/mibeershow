@@ -61,8 +61,10 @@
 					len = response.length;
 					for(var i = 0; i < len; i++ ) {
 					var place = response[i];
+					console.log(place);
 						for(var x = 0; x < place.data.length; x++) {
 							var event = place.data[x];
+							console.log(event);
 							$(".events").append(
 								$("<p>" + event.name + "</p>")
 							)
