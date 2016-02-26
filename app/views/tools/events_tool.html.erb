@@ -52,6 +52,8 @@
 			var start_date = $('#start_date').val();
 			var end_date = $('#end_date').val();
 			$('button').click(function() {
+				console.log("Start Date: " + start_date);
+				console.log("End Date: " + end_date);
 				$('.events').empty();
 				FB.api(
 				  '/events',
