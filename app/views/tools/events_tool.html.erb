@@ -63,20 +63,12 @@
 				    		for (var i = 0; i < events.length; i++) {
 				    			var event = events[i];
 				    			console.log(event.name);
+				    			$(".events").append(
+									$("<p>" + event.name + "</p>")
+								)
 				    		}
 				    	}
 				    }
-					// for(var i = 0; i < response.length; i++ ) {
-					// var place = response[i];
-					// console.log(place);
-					// 	for(var x = 0; x < place.data.length; x++) {
-					// 		var event = place.data[x];
-					// 		console.log(event);
-					// 		$(".events").append(
-					// 			$("<p>" + event.name + "</p>")
-					// 		)
-					// 	}
-					// }
 				});
 			})
 		</script>
