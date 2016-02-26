@@ -60,10 +60,9 @@
 				    for (var k in response) {
 				    	if (response.hasOwnProperty(k)) {
 				    		console.log(k);
-				    		// for (var data in k) {
-				    		// 	console.log(k[data])
-				    		// 	console.log(k[data]["description"]);
-				    		// }
+				    		for (var data in k) {
+				    			console.log("Data is: " + data)
+				    		}
 				    	}
 				    }
 					// for(var i = 0; i < response.length; i++ ) {
