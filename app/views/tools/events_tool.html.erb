@@ -59,11 +59,11 @@
 				  function(response) {
 				    for (var k in response) {
 				    	if (response.hasOwnProperty(k)) {
-				    		console.log(k["data"]["description"]);
-				    		for (var data in k) {
-				    			console.log(k[data])
-				    			console.log(k[data]["description"]);
-				    		}
+				    		console.log(k.data);
+				    		// for (var data in k) {
+				    		// 	console.log(k[data])
+				    		// 	console.log(k[data]["description"]);
+				    		// }
 				    	}
 				    }
 					// for(var i = 0; i < response.length; i++ ) {
