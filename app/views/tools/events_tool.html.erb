@@ -68,8 +68,10 @@
 				    			console.log(event.name);
 				    			console.log("Place Info: " + event.place.name);
 				    			$(".events").append(
-									'<p>' + event.name + '</p>' +
-									'<p>' + event.place.name + '</p>'
+				    				'<div class="event">' +
+										'<p>' + event.name + '</p>' +
+										'<p>' + event.place.name + '</p>' +
+									'</div>'
 								)
 				    		}
 				    	}

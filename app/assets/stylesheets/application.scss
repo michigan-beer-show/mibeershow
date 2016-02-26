@@ -149,3 +149,14 @@ input::-ms-input-placeholder {
   margin-bottom: 5%;
   display: block;
 }
+
+.event {
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #ddd;
+}
+
+.event p {
+  font-family: Open Sans, sans-serif;
+  text-align: left;
+}
