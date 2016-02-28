@@ -68,6 +68,7 @@
 				    		for (var i = 0; i < events.length; i++) {
 				    			var event = events[i];
 				    			var place = event.place;
+				    			var link = 'http://facebook.com/' + event.id
 				    			console.log(event.name);
 				    			console.log("Place Info: " + event.place.name);
 				    			$(".events").append(
@@ -77,7 +78,7 @@
 										'<p>' + place.location.street + ', ' + place.location.city + ', ' 
 										+ place.location.state + '</p>' +
 										'<p><strong>Description:</strong> ' + event.description + '</p>' +
-										'<a href="http://facebook.com/" + event.id>Link</a>' +
+										'<a href="'+ link +'">Link</a>' +
 									'</div>'
 								)
 				    		}
