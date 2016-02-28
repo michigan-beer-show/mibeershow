@@ -65,12 +65,16 @@
 				    		var events = response[k].data;
 				    		for (var i = 0; i < events.length; i++) {
 				    			var event = events[i];
+				    			var place = event.place;
 				    			console.log(event.name);
 				    			console.log("Place Info: " + event.place.name);
 				    			$(".events").append(
 				    				'<div class="event">' +
-										'<p>' + event.name + '</p>' +
-										'<p>' + event.place.name + '</p>' +
+										'<p><strong>What:</strong> ' + event.name + '</p>' +
+										'<p><strong>Where:</strong> ' + place.name + '</p>' +
+										'<p>' + place.location.street + ', ' + place.location.city + ', ' 
+										+ place.location.state + '</p>' +
+										'<p><strong>Description:</strong> ' + event.description + '</p>' +
 									'</div>'
 								)
 				    		}
