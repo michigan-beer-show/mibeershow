@@ -69,7 +69,7 @@
 				    			var event = events[i];
 				    			var place = event.place;
 				    			var link = 'http://facebook.com/' + event.id;
-				    			var date = event.start_time;
+				    			var date = new Date(event.start_time);
 				    			var formattedDate = date.toLocaleString();
 				    			console.log(event.name);
 				    			console.log("Place Info: " + event.place.name);
