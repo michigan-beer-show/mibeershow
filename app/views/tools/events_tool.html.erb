@@ -69,7 +69,8 @@
 				    			var event = events[i];
 				    			var place = event.place;
 				    			var link = 'http://facebook.com/' + event.id;
-				    			var date = event.start_time
+				    			var date = event.start_time;
+				    			var formattedDate = date.toLocaleString();
 				    			console.log(event.name);
 				    			console.log("Place Info: " + event.place.name);
 				    			$(".events").append(
@@ -78,7 +79,7 @@
 										'<p><strong>Where:</strong> ' + place.name + '</p>' +
 										'<p>' + place.location.street + ', ' + place.location.city + ', ' 
 										+ place.location.state + '</p>' +
-										'<p>When: ' + date.toLocaleString(); + '</p>' +
+										'<p>When: ' + formattedDate + '</p>' +
 										'<p><strong>Description:</strong> ' + event.description + '</p>' +
 										'<a href="'+ link +'" target="_blank">Link</a>' +
 									'</div>'
