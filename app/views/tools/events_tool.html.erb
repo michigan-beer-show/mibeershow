@@ -47,7 +47,7 @@
 		<h1>Get beer events for a range of dates</h1>
 		<label>Start Date</label><input type="date" id="start_date">
 		<label>End Date</label><input type="date" id="end_date">
-		<button class="btn btn-primary btn-lg">Find Events</button>
+		<button class="btn btn-primary btn-default">Find Events</button>
 		<div class="events">
 		</div>
 		<script>
@@ -81,7 +81,7 @@
 										+ place.location.state + '</p>' +
 										'<p><strong>When:</strong> ' + formattedDate + '</p>' +
 										'<p><strong>Description:</strong> ' + event.description + '</p>' +
-										'<a href="'+ link +'" target="_blank">Link</a>' +
+										'<p>More info <a href="'+ link +'" target="_blank">here</a>.' +
 									'</div>'
 								)
 				    		}
