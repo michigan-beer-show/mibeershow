@@ -149,3 +149,15 @@ input::-ms-input-placeholder {
   margin-bottom: 5%;
   display: block;
 }
+
+.event {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 2%;
+  margin-bottom: 2%;
+}
+
+.event p {
+  text-align: left;
+}

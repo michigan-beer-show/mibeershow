@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '713405955428183',
+		      xfbml      : true,
+		      status     : true,
+		      version    : 'v2.5'
+		    });
+		    FB.getLoginStatus(function(response) {
+		  	  console.log('getLoginStatus called. Status is ' + response.status);
+			  if (response.status === 'connected') {
+			    // the user is logged in and has authenticated your
+			    // app, and response.authResponse supplies
+			    // the user's ID, a valid access token, a signed
+			    // request, and the time the access token 
+			    // and signed request each expire
+			    var uid = response.authResponse.userID;
+			    var accessToken = response.authResponse.accessToken;
+			    $(".fb-login-button").replaceWith("");
+			    // the user is logged in to Facebook, 
+			    // but has not authenticated your app
+			  } else {
+			    // the user isn't logged in to Facebook.
+			  }
+			 });
+		  };
+
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=713405955428183";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
+		<div class="login-area">
+		</div>
+		<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+		<h1>Get beer events for a range of dates</h1>
+		<label>Start Date</label><input type="date" id="start_date">
+		<label>End Date</label><input type="date" id="end_date">
+		<button class="btn btn-primary btn-default">Find Events</button>
+		<div class="events">
+		</div>
+		<script>
+			$('button').click(function() {
+				var start_date = $('#start_date').val();
+				var end_date = $('#end_date').val();
+				console.log("Start Date: " + start_date);
+				console.log("End Date: " + end_date);
+				$('.events').empty();
+				FB.api(
+				  '/events',
+				  'GET',
+				  {"ids":"105556992828025,192775419960,7579541007,37666630858,85225854762,113401765351875,162005542775,108780209962,198090120279785,189988187874231,648104601902330,117460490046,503893199747856,23091193699,72603589907,189257844446264,309421567335,251475819670,175902751236,161299953908156,48931073100,168663362478,263969590374774,573634349387343,195131513849214,219589161509633,224306027626405,465041390203339,1501471970116372","since":start_date,"until":end_date},
+				  function(response) {
+				    for (var k in response) {
+				    	if (response.hasOwnProperty(k)) {
+				    		var events = response[k].data;
+				    		for (var i = 0; i < events.length; i++) {
+				    			var event = events[i];
+				    			var place = event.place;
+				    			var link = 'http://facebook.com/' + event.id;
+				    			var date = new Date(event.start_time);
+				    			var formattedDate = date.toLocaleString();
+				    			var splitStr = place.name.split(" ");
+				    			var queryParam = splitStr.join("+");
+				    			var queryString = "http://maps.google.com/?q=" + queryParam;
+				    			console.log(event.name);
+				    			console.log("Place Info: " + event.place.name);
+				    			$(".events").append(
+				    				'<div class="event">' +
+										'<p><strong>What:</strong> ' + event.name + '</p>' +
+										'<p><strong>When:</strong> ' + formattedDate + '</p>' +
+										'<p><strong>Where:</strong> ' + '<a href = "' + queryString +'">' +place.name + ' &middot ' + place.location.street + ', ' + place.location.city + ', ' + place.location.state + '</a></p>' +
+										'<p><strong>Description:</strong> ' + event.description + '</p>' +
+										'<p>More info <a href="'+ link +'" target="_blank">here</a>.' +
+									'</div>'
+								)
+				    		}
+				    	}
+				    }
+				});
+			})
+		</script>
+	</body>
+</html>
